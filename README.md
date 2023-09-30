@@ -1,4 +1,5 @@
 Special thanks to Deadcows for having developed [MyBox](https://github.com/Deadcows/MyBox), which is imported via package-manager in the Orbo's Odyssey Modkit to make interfacing with the modkit objects a lot cleaner.
+Another special thanks to Facepunch for the [Facepunch Steamworks API](https://github.com/Facepunch/Facepunch.Steamworks), which is what I'm using to send data to the steam workshop.
 
 ## Installation
 

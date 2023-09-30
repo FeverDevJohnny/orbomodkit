@@ -50,6 +50,8 @@ To test this out, go back to your core file and hit the "Build Mod" button. Afte
 
 Now then, take this mod folder, and go to your installation directory for Orbo, open up the data folder, and you should find a folder labelled "Mods" in there. Place your new mod folder into there. Now you can open up the game and load your mod!
 
+To add a custom icon for your mod, create a **16:9 image** and export it as a .jpeg (for file size).
+
 ---
 
 ### Uploading to Steam Workshop

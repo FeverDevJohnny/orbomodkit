@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - KeyOrb_Blue
+  - KeyOrb_Pink
+  - KeyOrb_Green
+  - KeyOrb_Red
+  - IgnoreTracking
+  - GnomeHead
+  - NukeBall
+  - CrazyShapeGate
+  - Tag_A
+  - Tag_B
+  - Tag_C
+  - Tag_D
+  - Tag_E
+  - Tag_F
+  - Tag_G
+  - Tag_H
+  - Tag_I
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Player
+  - Water
+  - UI
+  - UIPrerender
+  - PlayerNoCollide
+  - Gib
+  - Damageable
+  - Damageable_WalkOn
+  - PlayerBlocker
+  - BlockerPassthrough
+  - NoWallslide
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

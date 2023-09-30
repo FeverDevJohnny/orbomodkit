@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f292227a7ce06749878ba00ef2465c6, type: 3}
+  m_Name: Mod_ExampleMod
+  m_EditorClassIdentifier: 
+  modName: Orbo's Modyssey
+  modDesc: This is the example mod packed in with the Orbo's Odyssey modkit! You
+    can wander around in here in-game to see the modkit's featureset, and learn a
+    bit about the process as a whole.
+  modAuthor: Peeb
+  modIcon: {fileID: 2800000, guid: 7b47b94df734adc49bfd7531fc74137b, type: 3}
+  version: 1.0.0
+  initialSceneToLoad: Scn_ExampleMod
+  spawnPosition: {x: 0, y: 44.27, z: -11.65}
+  spawnYaw: 0
+  scenes:
+  - {fileID: 102900000, guid: 19dec13ff51ffdd4f9c523c89d777575, type: 3}
+  - {fileID: 102900000, guid: 3924dda26dfc74648acbec350c498620, type: 3}
+  associatedFileID: 0
+  hasKnownFileID: 0
+  workshopVisiblity: 2

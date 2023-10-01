@@ -97,7 +97,7 @@ Right-click in the hierarchy, go down to **Modkit > Visual > Post Processing** a
 
 [(API Reference for Cannons)](#cannon-api-reference)
 
-Mobility is definitely the main focus of Orbo's Odyssey, so naturally you can use cannons and gust plates in your modded levels as well!
+Mobility is the main focus of Orbo's Odyssey, so naturally you can use cannons and gust plates in your modded levels as well!
 
 Let's go over how to create these objects.
 

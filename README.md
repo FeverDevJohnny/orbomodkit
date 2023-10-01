@@ -58,7 +58,7 @@ To add a custom icon for your mod, create a **16:9 image** and export it as a .j
 
 You will need to be logged into your steam account on this computer for uploading to work.
 
-It's pretty simply to upload to the workshop: Just make sure **you've filled out your mod info** and **create a build**.
+It's pretty simple to upload to the workshop: Just make sure **you've filled out your mod info** and **create a build**.
 Then you can configure the privacy of your workshop mod, and hit **Upload to Workshop** to begin the process.
 Once you've made an upload, you can press the **Update on Steam Workshop** button to rebuild to the workshop as you please.
 

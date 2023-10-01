@@ -121,7 +121,7 @@ And here are the settings for a **Gust Plate**:
 
 ### Working With Level Binders
 
-A level binder can be thought of as a configuration tool for your level.
+A level binder allows you to customize a couple settings for the scene it's in.
 
 To create one, Right-Click in the hierarchy and navigate to **Modkit > Management > Level Binder**.
 
@@ -171,9 +171,9 @@ Here are the parameters:
 
 ### Working With A Size Reference
 
-You can Right-Click in the hierarchy and navigate to **Modkit > Misc > Size Reference** to make a size reference. This shows you how utterly microscopic Orbo is in the world. Please cherish this size reference and treat it gently, okay?
+You can Right-Click in the hierarchy and navigate to **Modkit > Misc > Size Reference** to make a size reference. This shows you how tiny Orbo is in the grand scheme of things.
 
-Also it has a readonly Size Reference value that tells you the exact size, in units, Orbo is.
+Also it has a readonly Size Reference value that oughta help you if you're trying to create models that need to match Orbo's scale.
 
 ---
 
@@ -213,7 +213,7 @@ Global volumes will affect the current track no matter what. These are typically
 
 Local volumes affect the current track if the player occupies their space. You can use any of unity's built-in physics colliders (except for mesh colliders) configured as a trigger to work with the local volume system.
 
-The priority value of a volume determines how important it is compared to other volumes. If you activate a gloval volume with a higher priority than one that already exists, it'll crossfade the current song into the new volume's track.
+The priority value of a volume determines how important it is compared to other volumes. If you activate a global volume with a higher priority than one that already exists, it'll crossfade the current song into the new volume's track.
 
 Higher priority can be helpful with local volumes, as you can create zones in your level where the BGM changes, and once you exit them it'll default back to the standard track (or whichever track is next in line).
 
@@ -233,11 +233,11 @@ These are very self-explanatory systems, so I'm mostly just going to explain the
 
 Slab Doors should have their front facing the direction the player will approach them from, since they do not have any details on the other side. The front side is designated by a white arrow.
 
-**Displacement Goal** determines how far the slab door must move from its current position to be considered "open". This is determined in world-space, so if you shrink or expand your slab door you will have to readjust the displacement distance to match.
+**Displacement Goal** determines how far the slab door must move from its current position to be considered "open". This is determined in world-space, so if you shrink or expand your slab door you will have to readjust the displacement goal to match.
 
 **Displacement Speed** determines how fast, in seconds, the door will reach its goal.
 
-**Dust Offset** determines where the dust effect for the door opening will be positioned when it's unlocked. Typically you should adjust the offset so that the dust appears on the floor.
+**Dust Offset** determines where the dust effect for the door opening will be positioned when it's unlocked. Typically you should adjust the offset so that the white boundary gizmo is aligned to the floor.
 
 **On Unlock Door Slab** is a JTrigger hook that will run events once a door receives its key orb. 
 
@@ -930,17 +930,17 @@ However, **you must use Non-Directional lightmaps**. Directional lightmaps do no
 
 ### Complexity
 
-The modding toolkit is, frankly, not a brilliantly engineered system that'll let you create any game you want in Orbo's Odyssey. I tried to add a decent chunk of universalized systems so you could try and add fun set pieces that didn't show up in the original game, but I want to acknowledge now that this toolset isn't going to give you everything you could ask for. I made it as a way of saying thanks for the people who bought the game and were kind to me while I was in a very bad place.
+I tried to integrate a decent chunk of universalized systems so you could try and add fun set pieces that didn't show up in the original game, but I want to acknowledge now that this toolset isn't going to give you everything you could ask for. I made it as a way of saying thanks for the people who bought the game and were kind to me while I was in a very bad place.
 
 Think of this modding toolkit like Nintendo's *Super Mario Maker*. You can get creative with the tools to create levels that feature really intriguing mechanics not present in the base game, but at the end of the day the toolset is just there for you to make fun levels.
 
-The game wasn't built around the idea that it would receive mods, this was added post-release, so some things are going to feel clunky or strange. I tried to simplify the process where I could, but that's about all I could do. I still have to get to work on my main game lol.
+The game wasn't built around the idea that it would receive mods, so keep in mind that this modding toolkit is scaffolded around the base game in a way that might make some things feel clunky or strange. I tried to simplify the process where I could, but that's about all I could do. I still have to get to work on my main game lol.
 
 ----
 
 ### On Trigger Passthrough and Duplicate Events
 
-This is a really helpful system, but keep in mind that if your passthrough's trigger volume overlaps with its source object's, it can generate duplicate OnTriggerEnter and OnTriggerExit events on your target object. This might be fine if you're dealing with modkit objects that have one-shot behavior (key orbs, for example, only get collected on the first trigger event and will ignore duplicates), but with JTriggers and Interactables this could cause some unexpected behavior. In these two explicit cases, **try to make sure you're only using passthroughs when there is absolutely no way to have the player make contact with your target object**.
+This is a really helpful system, but keep in mind that if your passthrough's trigger volume overlaps with its source object's trigger volume, it can generate duplicate OnTriggerEnter and OnTriggerExit events on your target object. This might be fine if you're dealing with modkit objects that have one-shot behavior (key orbs, for example, only get collected on the first trigger event and will ignore duplicates), but with JTriggers and Interactables this could cause some unexpected behavior. In these two explicit cases, **try to make sure you're only using passthroughs when there is absolutely no way to have the player make contact with your target object's trigger collider**.
 
 I haven't devised a way to deal with this yet that I feel satisfied with, so maybe at somepoint down the road I'll rework how passthroughs behave with triggerable objects to make it a bit more friendly. For now, just accept that this is a known issue and try to be careful not to walk into a trap.
 

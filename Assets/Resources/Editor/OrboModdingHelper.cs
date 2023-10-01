@@ -199,7 +199,9 @@ public class OrboModdingHelper : EditorWindow
     {
         GUILayout.BeginHorizontal();
         GUILayout.FlexibleSpace();
-        GUILayout.Label(text);//EditorGUILayout.LabelField("Welcome to the Orbo modding toolset!");
+        GUIStyle style = GUI.skin.label;
+        style.richText = true;
+        GUILayout.Label(text, style);//EditorGUILayout.LabelField("Welcome to the Orbo modding toolset!");
         GUILayout.FlexibleSpace();
         GUILayout.EndHorizontal();
     }
@@ -221,7 +223,21 @@ public class OrboModdingHelper : EditorWindow
         GUILayout.Space(16);
 
         CenterText("== Welcome to the Orbo's Odyssey modding toolset ==");//EditorGUILayout.LabelField("Welcome to the Orbo modding toolset!");
-        CenterText("Please refer to the documentation at [LINK HERE] for help!");
+                                                                          //CenterText("Please refer to https://github.com/FeverDevJohnny/orbomodkit for help!");
+
+        //CenterText("Please refer to the documentation <a href=\"https://github.com/FeverDevJohnny/orbomodkit\">here</a> for help!");
+
+        GUIStyle style = GUI.skin.label;
+        style.richText = true;
+
+        GUILayout.BeginHorizontal();
+        GUILayout.FlexibleSpace();
+        GUILayout.Label("Please refer to the");
+        EditorGUILayout.TextField("<a href=\"https://github.com/FeverDevJohnny/orbomodkit\">Orbo Modding Docs</a>", style, GUILayout.ExpandWidth(false), GUILayout.Width(120));
+        GUILayout.Label("for help!");//EditorGUILayout.LabelField("Welcome to the Orbo modding toolset!");
+        GUILayout.FlexibleSpace();
+        GUILayout.EndHorizontal();
+
 
         GUILayout.Space(16);
 

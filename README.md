@@ -1,6 +1,6 @@
 # OrboModKit
 
-Toolkit made in Unity 2022.3.4f1 that allow you to build level mods for [Orbo's Odyssey](store.steampowered.com/app/2539960/Orbos_Odyssey).
+Toolkit made in Unity 2022.3.4f1 that allow you to build level mods for [Orbo's Odyssey](https://store.steampowered.com/app/2539960/Orbos_Odyssey).
 
 #### ⚠️ New Unity Dev Warning ⚠️
 

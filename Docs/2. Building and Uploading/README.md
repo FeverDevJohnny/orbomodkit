@@ -22,6 +22,6 @@ It's pretty simple to upload to the workshop: Just make sure **you've filled out
 Then you can configure the privacy of your workshop mod, and hit **Upload to Workshop** to begin the process.
 Once you've made an upload, you can press the **Update on Steam Workshop** button to rebuild to the workshop as you please.
 
-**KNOWN ISSUES:**
+**⚠️KNOWN ISSUES⚠️**
 
 - Steam Workshop HATES icon files that are larger than 1MB. Now, the game itself doesn't care, but if you want to upload to the workshop, please make sure your file size is correct. Otherwise you'll receive an error during the upload process.

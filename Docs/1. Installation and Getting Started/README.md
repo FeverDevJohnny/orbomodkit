@@ -27,5 +27,3 @@ The **ModContent** Folder is where you will store all of your assets. There's no
 Inside of your **ModContent** folder, Right-Click and hit **Create > New Scene**. You can title this whatever you want, but this will be the level the player will load into when your mod is activated in-game.
 
 Delete the Main Camera that's packed in with the scene, since we don't need it. You'll want to create some kind of floor for Orbo to stand on, so right-Click inside of the scene hierarchy and hit **Create > 3D Object > Plane**, and place it at world origin. Maybe scale it up on the X and Z axes so we have some extra space to move around.
-
----

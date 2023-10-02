@@ -2,9 +2,9 @@
 
 Toolkit made in Unity 2022.3.4f1 that allow you to build level mods for [Orbo's Odyssey](https://store.steampowered.com/app/2539960/Orbos_Odyssey).
 
-#### ⚠️ New Unity Dev Warning ⚠️
+#### Notice
 
-**NOTICE**: I STRONGLY recommend [learning unity's interface](https://learn.unity.com/project/start-creating-1?pathwayId=5f7bcab4edbc2a0023e9c38f&missionId=5f77cc6bedbc2a4a1dbddc46) before trying to use the modding toolset. This documentation is explicitly here to tutorialize the mod tools themselves, not the engine.
+I STRONGLY recommend [learning unity's interface](https://learn.unity.com/project/start-creating-1?pathwayId=5f7bcab4edbc2a0023e9c38f&missionId=5f77cc6bedbc2a4a1dbddc46) before trying to use the modding toolset. This documentation is explicitly here to tutorialize the mod tools themselves, not the engine.
 
 ### Getting Started
 

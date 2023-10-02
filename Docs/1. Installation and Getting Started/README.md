@@ -4,6 +4,8 @@ To install the **Orbo's Odyssey modkit**, you can clone a copy of the modding pr
 
 ### You will need to have [**Unity 2022.3.4f1**](https://unity.com/releases/editor/whats-new/2022.3.4) installed to open the modkit project. After that, you are ready to start working on your mod! No need for visual studio or any other installations, mod scripting is done entirely in-engine using JTrigger.
 
+### You will also need [git](https://git-scm.com/download) installed 
+
 ## Getting Started
 
 To begin, open the modkit project in Unity 2022.3.4f1.

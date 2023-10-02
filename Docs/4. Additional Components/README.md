@@ -18,7 +18,7 @@ Bind Audio Mixer only has a single property, which defines which mixer to use:
 
 ### Constant Mover
 
-[(API Reference for Constant Mover)](https://github.com/FeverDevJohnny/orbomodkit/tree/main/Docs/API%20Reference)
+[(API Reference for Constant Mover)](https://github.com/FeverDevJohnny/orbomodkit/tree/main/Docs/9.%20API%20Reference)
 
 Constant movers will take an object, and as expected, constantly move it in a direction.
 
@@ -42,7 +42,7 @@ If **Override Target** is set, Constant Mover will expose some unique settings:
 
 ### Speaker Target
 
-[(API Reference for Speaker Targets)](https://github.com/FeverDevJohnny/orbomodkit/tree/main/Docs/API%20Reference)
+[(API Reference for Speaker Targets)](https://github.com/FeverDevJohnny/orbomodkit/tree/main/Docs/9.%20API%20Reference)
 
 This is an interface component that JComposers will use to inform an NPC when they're speaking in a dialog.
 
@@ -52,7 +52,7 @@ They only have a single parameter: A target [NPC Mood Controller](#NPC Mood Cont
 
 ### Speaker Target Animator
 
-[(API Reference for Speaker Target Animators)](https://github.com/FeverDevJohnny/orbomodkit/tree/main/Docs/API%20Reference)
+[(API Reference for Speaker Target Animators)](https://github.com/FeverDevJohnny/orbomodkit/tree/main/Docs/9.%20API%20Reference)
 
 This is a special variant of a Speaker Target that can be used to interface with an NPC's animator component instead of using texture moods.
 
@@ -103,7 +103,7 @@ Here is a list of IDs (they are not case-sensitive):
 
 ### NPC Mood Controller
 
-[(API Reference for NPC Mood Controller)](https://github.com/FeverDevJohnny/orbomodkit/tree/main/Docs/API%20Reference)
+[(API Reference for NPC Mood Controller)](https://github.com/FeverDevJohnny/orbomodkit/tree/main/Docs/9.%20API%20Reference)
 
 This component is a system designed to handle texture-based animations for NPCs.
 
@@ -145,7 +145,7 @@ An extremely simple script.
 
 ### Rotate To Face Transform
 
-[(API Reference for Rotate To Face Transform)](https://github.com/FeverDevJohnny/orbomodkit/tree/main/Docs/API%20Reference)
+[(API Reference for Rotate To Face Transform)](https://github.com/FeverDevJohnny/orbomodkit/tree/main/Docs/9.%20API%20Reference)
 
 Also very straightforward:
 
@@ -157,7 +157,7 @@ Also very straightforward:
 
 ### Squash And Stretch
 
-[(API Reference for Squash And Stretch)](https://github.com/FeverDevJohnny/orbomodkit/tree/main/Docs/API%20Reference)
+[(API Reference for Squash And Stretch)](https://github.com/FeverDevJohnny/orbomodkit/tree/main/Docs/9.%20API%20Reference)
 
 A Feverdream classic.
 
@@ -179,7 +179,7 @@ You can either have this track to the player's head, or to the facecam object at
 
 ### Transform Mover
 
-[(API Reference for Transform Mover)](https://github.com/FeverDevJohnny/orbomodkit/tree/main/Docs/API%20Reference)
+[(API Reference for Transform Mover)](https://github.com/FeverDevJohnny/orbomodkit/tree/main/Docs/9.%20API%20Reference)
 
 Transform movers are an alternative way to manage transforms that gives you more precise control over timing (and rotation). They can be used to teleport objects to specific positions, create timed interpolations for set pieces, or really for whatever. If you're creative you can do a lot with these.
 

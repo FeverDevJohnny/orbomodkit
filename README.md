@@ -914,7 +914,7 @@ To actually run a JSwitch, a JTrigger or JComposer must call **JSwitch > Operate
 
 ---
 
-## Caveats and Known Issues
+## Caveats, Miscellaneous Info and Known Issues
 
 Believe it or not: Unity doesn't do a great job supporting most of their features, and I'm also prone to mistakes! So there are some technical issues with mods that I would like to address here.
 
@@ -943,6 +943,43 @@ The game wasn't built around the idea that it would receive mods, so keep in min
 This is a really helpful system, but keep in mind that if your passthrough's trigger volume overlaps with its source object's trigger volume, it can generate duplicate OnTriggerEnter and OnTriggerExit events on your target object. This might be fine if you're dealing with modkit objects that have one-shot behavior (key orbs, for example, only get collected on the first trigger event and will ignore duplicates), but with JTriggers and Interactables this could cause some unexpected behavior. In these two explicit cases, **try to make sure you're only using passthroughs when there is absolutely no way to have the player make contact with your target object's trigger collider**.
 
 I haven't devised a way to deal with this yet that I feel satisfied with, so maybe at somepoint down the road I'll rework how passthroughs behave with triggerable objects to make it a bit more friendly. For now, just accept that this is a known issue and try to be careful not to walk into a trap.
+
+---
+
+### Tags and Layers
+
+You cannot define new tags and layers for your modded levels due to a technical constraint with how Unity handles asset bundles and these types of data.
+I have tried to supply some options to make things easier, and I will list and explain all of the tags and layers here:
+
+**Tags**
+- **KeyOrb_Blue** - Used on blue key orbs to transmit data to slab doors. Strongly recommend you avoid using this for your own objects as it might confuse the doors and cause errors.
+- **KeyOrb_Pink** - Used on pink key orbs to transmit data to slab doors. Strongly recommend you avoid using this for your own objects as it might confuse the doors and cause errors.
+- **KeyOrb_Green** - Used on green key orbs to transmit data to slab doors. Strongly recommend you avoid using this for your own objects as it might confuse the doors and cause errors.
+- **KeyOrb_Red** - Used on red key orbs to transmit data to slab doors. Strongly recommend you avoid using this for your own objects as it might confuse the doors and cause errors.
+- **IgnoreTracking** - Tells the composer system that Orbo's body shouldn't try to look at this associated object if it's marked as the camera's current view target.
+- **GnomeHead** - Internal ID used in the main game for the gnome quest. You can use this if you want, there's no scripts in the modding system to conflict with this.
+- **NukeBall** - Internal ID for the boss's aerial mine attack. Also used in the gnome quest.
+- **CrazyShapeGate** - Internal ID for the crazy shape gate in the monolith station puzzle.
+- **Tag_A** - A pre-reserved tag you can use for your modded objects!
+- **Tag_B** - A pre-reserved tag you can use for your modded objects!
+- **Tag_C** - A pre-reserved tag you can use for your modded objects!
+- **Tag_D** - A pre-reserved tag you can use for your modded objects!
+- **Tag_E** - A pre-reserved tag you can use for your modded objects!
+- **Tag_F** - A pre-reserved tag you can use for your modded objects!
+- **Tag_G** - A pre-reserved tag you can use for your modded objects!
+- **Tag_H** - A pre-reserved tag you can use for your modded objects!
+- **Tag_I** - A pre-reserved tag you can use for your modded objects!
+
+**Layers**
+- **Player** - This is the contact layer for the player. I recommend not using this one or else you might encounter some technical issues.
+- **UIPrerender** - This was used back when the game had 3D UI elements, but has since become deprecated. This can be ignored.
+- **PlayerNoCollide** - Useful! This tells an object to avoid collding with the player. You can use this to create objects that can interact with triggers without interfering with the player.
+- **Gib** - Used internally for breakable sand walls and other destructive remnants. Won't collide with the player.
+- **Damageable** - Marks an object for use in the aim-assist feature (causes Orbo to curve towards the object while drilling). Players will slide off of these objects if they land on them.
+- **Damageable_WalkOn** -  Same as Damageable, but the player won't slide while walking on them. Typically used for gust plates and the like.
+- **PlayerBlocker** - This makes it so an object will collide with the player, but the camera won't. Quite useful for decorative elements in a scene.
+- **BlockerPassthrough** - This object won't colide with player blockers, but will collide with everything else. Used on Peeb during the hallway cutscene so he can head into the light while Orbo can't.
+- **NoWallslide** - The player and the camera will collide with this object, but the player cannot wallslide on it. Used in a few places in-game, like the hall leading out of the boss's office that Orbo cannot access without fighting the HR Rep first.
 
 ---
 

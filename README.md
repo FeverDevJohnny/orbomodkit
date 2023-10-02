@@ -1,77 +1,16 @@
+## OrboModKit
+
+Toolkit made in Unity 2022.3.4f1 that allow you to build level mods for [Orbo's Odyssey](store.steampowered.com/app/2539960/Orbos_Odyssey).
+
+### ⚠️ New Unity Dev Warning ⚠️
+
+**NOTICE**: I STRONGLY recommend [learning unity's interface](https://learn.unity.com/project/start-creating-1?pathwayId=5f7bcab4edbc2a0023e9c38f&missionId=5f77cc6bedbc2a4a1dbddc46) before trying to use the modding toolset. This documentation is explicitly here to tutorialize the mod tools themselves, not the engine.
+
+---
+
 Special thanks to Deadcows for having developed [MyBox](https://github.com/Deadcows/MyBox), which is imported via package-manager in the Orbo's Odyssey Modkit to make interfacing with the modkit objects a lot cleaner.
 
 Another special thanks to Facepunch for the [Facepunch Steamworks API](https://github.com/Facepunch/Facepunch.Steamworks), which is what the modkit uses to send data to the steam workshop.
-
-## Installation
-
-To install the **Orbo's Odyssey modkit**, you can clone a copy of the modding project files from [the github page](https://github.com/FeverDevJohnny/orbomodkit).
-
-You will need to have [**Unity 2022.3.4f1**](https://unity.com/releases/editor/whats-new/2022.3.4) installed to open the modkit project. After that, you are ready to start working on your mod! No need for visual studio or any other installations, mod scripting is done entirely in-engine using JTrigger.
-
-**NOTICE**: I **STRONGLY** recommend [learning unity's interface](https://learn.unity.com/project/start-creating-1?pathwayId=5f7bcab4edbc2a0023e9c38f&missionId=5f77cc6bedbc2a4a1dbddc46) before trying to use the modding toolset. This documentation is explicitly here to tutorialize the mod tools themselves, not the engine.
-
----
-
-## Getting Started
-
-To begin, open the modkit project in Unity 2022.3.4f1.
-
-In the Resources folder, you will find a section for Mods. This is where your content will be stored once you start working. If you would like, you can open up the included example mod's scene folder and load a level to see what a mod looks like in-editor. You can also play the example mod by installing it from the steam workshop. 
-
-To create a mod, head to the toolbar at the top of the unity editor and select **Modding > Modkit Helper**
-
-This will open a window where you can generate the required mod files. You will be prompted to provide a name. Once you're good to go, you can hit create mod.
-
-Inside of Resources/Mods/, you will find a new folder for your mod. Inside of this folder is your **Mod Core File** and the **ModContent** Folder.
-
-The **Mod Core File** is your hub. Selecting it will allow you to define information about your mod, as well as the option to build and upload it. We'll come back to this in a bit.
-
-The **ModContent** Folder is where you will store all of your assets. There's no specific folder architecture requirement beyond making sure your content is packed in here, so feel free to organize the contents however you like.
-
----
-
-### Creating Your First Scene
-
-Inside of your **ModContent** folder, Right-Click and hit **Create > New Scene**. You can title this whatever you want, but this will be the level the player will load into when your mod is activated in-game.
-
-Delete the Main Camera that's packed in with the scene, since we don't need it. You'll want to create some kind of floor for Orbo to stand on, so right-Click inside of the scene hierarchy and hit **Create > 3D Object > Plane**, and place it at world origin. Maybe scale it up on the X and Z axes so we have some extra space to move around.
-
----
-
-### Building a Mod
-
-Now, we're going to configure the mod so you can actually play it. Go over to your **Mod Core File** and select it. In the inspector, we need to go to the **scenes** list and drag our new level to it. Once that's done, go the the **initial level to load** parameter, and type in the name of the level.
-
-Once you've done that, you might notice a little yellow circle with an arrow showing up in the scene view. This is the spawn point of your first scene. Inside the core file you can find settings to change the position of this spawn point as well as the initial spawn rotation the player will pop into the level with.
-
-With these out of the way, congratulations! You've made a very basic level.
-
-To test this out, go back to your core file and hit the "Build Mod" button. After a short while, the windows explorer should open up to show you the mod folder. You've done it! You've made a mod.
-
-Now then, take this mod folder, and go to your installation directory for Orbo, open up the data folder, and you should find a folder labelled "Mods" in there. Place your new mod folder into there. Now you can open up the game and load your mod!
-
-To add a custom icon for your mod, create a **16:9 image** and export it as a .jpeg (for file size).
-
----
-
-### Uploading to Steam Workshop
-
-You will need to be logged into your steam account on this computer for uploading to work.
-
-It's pretty simple to upload to the workshop: Just make sure **you've filled out your mod info** and **create a build**.
-Then you can configure the privacy of your workshop mod, and hit **Upload to Workshop** to begin the process.
-Once you've made an upload, you can press the **Update on Steam Workshop** button to rebuild to the workshop as you please.
-
-**KNOWN ISSUES:**
-- Steam Workshop HATES icon files that are larger than 1MB. Now, the game itself doesn't care, but if you want to upload to the workshop, please make sure your file size is correct. Otherwise you'll receive an error during the upload process.
-
----
-
-## Working With In-Game Systems
-
-Naturally, a single plane in the default unity skybox doesn't make much of a level. Let's learn how to work with gameplay implements like pips, gear parts and time trials!
-
----
 
 ### Shells vs Built-In Components
 
@@ -79,7 +18,7 @@ If you've made the effort to learn how to work with unity's interface, you've pr
 
 The modkit includes quite a few scripts that work in this fashion, divided into **Shell Components** and **Built-In Components**.
 
-Shell Components are essentially spawners. When they're attached to an object, they'll create an object of an associated type when the game starts running. This includes prefabs like time trial rings, buttons, cannons, gust plates, etc. 
+Shell Components are essentially spawners. When they're attached to an object, they'll create an object of an associated type when the game starts running. This includes prefabs like time trial rings, buttons, cannons, gust plates, etc.
 
 Built-In Components don't create an associated object, as they are pure logic systems. These include BGM volumes, JTriggers, JComposers, etc.
 
@@ -101,7 +40,7 @@ Mobility is the main focus of Orbo's Odyssey, so naturally you can use cannons a
 
 Let's go over how to create these objects.
 
-Right-Click in the hierarchy, and navigate to **Modkit > Movement**. Here, you'll find both **Cannon** and **Gust Plate** as creation options. 
+Right-Click in the hierarchy, and navigate to **Modkit > Movement**. Here, you'll find both **Cannon** and **Gust Plate** as creation options.
 
 Here are the settings for a **Cannon**:
 
@@ -114,7 +53,7 @@ Here are the settings for a **Cannon**:
 
 And here are the settings for a **Gust Plate**:
 
-- **Launch Force** -  How much upward force, in units per second, to apply to the player when struck.
+- **Launch Force** - How much upward force, in units per second, to apply to the player when struck.
 - **On Gust Plate Use** - This is a JTrigger event that will be ran when the gust plate is struck with a melee attack.
 
 ---
@@ -239,7 +178,7 @@ Slab Doors should have their front facing the direction the player will approach
 
 **Dust Offset** determines where the dust effect for the door opening will be positioned when it's unlocked. Typically you should adjust the offset so that the white boundary gizmo is aligned to the floor.
 
-**On Unlock Door Slab** is a JTrigger hook that will run events once a door receives its key orb. 
+**On Unlock Door Slab** is a JTrigger hook that will run events once a door receives its key orb.
 
 ---
 
@@ -255,21 +194,21 @@ The green orb is the actual checkpoint itself, while the green cube and arrow is
 
 If you open the checkpoint object in the hierarchy, you can grab and move the player spawn point wherever you please. Keep in mind that while you can rotate this spawnpoint all you want, **it will always align to World-Up when spawning the player**. Only the yaw (the Y-axis) is accounted for when spawning Orbo.
 
-Checkpoints have two events that can be hooked into with JTriggers: 
+Checkpoints have two events that can be hooked into with JTriggers:
 
 **On Checkpoint Activate** - Only runs when a checkpoint has been established for the first time.
 
-**On Checkpoint Strike** - Runs anytime the player melees the checkpoint, even on the first time they've activated it. 
+**On Checkpoint Strike** - Runs anytime the player melees the checkpoint, even on the first time they've activated it.
 
-On a final note, checkpoints can be activated without needing to be struck by calling **SetCheckpointAsCurrent()** or **SetCheckpointAsCurrentQuietly()** via JTrigger. The first function will make the checkpoint activate as though you struck it (with all the sounds and gravitas you'd expect), while the second is a silent method that can be used to covertly enable checkpoints without the player realizing. 
+On a final note, checkpoints can be activated without needing to be struck by calling **SetCheckpointAsCurrent()** or **SetCheckpointAsCurrentQuietly()** via JTrigger. The first function will make the checkpoint activate as though you struck it (with all the sounds and gravitas you'd expect), while the second is a silent method that can be used to covertly enable checkpoints without the player realizing.
 
-----
+---
 
 ### Working With Interactable Objects
 
 [(API Reference for Interactable_Events)](#interactable_events-api-reference)
 
-To construct an interactable object, let's start by navigating to **Modkit > Event > Interactable Events**. 
+To construct an interactable object, let's start by navigating to **Modkit > Event > Interactable Events**.
 
 Interactables make up a large segment of player interaction, and are important for creating certain game elements such as NPCs or puzzles. They are a type of [World Object](#what-are-world-objects), so please review the documentation for World Objects to learn more about the settings under World Object - General Settings.
 
@@ -396,7 +335,7 @@ Before we move onto Time Trials, let's test out what we've done so far. Go to yo
 
 Navigate to **Modkit > Management > Trial Manager**.
 
-To start, we're going to be setting the *Time Ttrial ID*. If you see an ID field and it doesn't include "Override" in its title, then you need to provide a unique name for it. For the purposes of this tutorial, we'll just label **Time Trial ID** as **Trial_Tutorial**.
+To start, we're going to be setting the _Time Ttrial ID_. If you see an ID field and it doesn't include "Override" in its title, then you need to provide a unique name for it. For the purposes of this tutorial, we'll just label **Time Trial ID** as **Trial_Tutorial**.
 
 As with the Pip Manager, you should create a new gear part and disable **Active By Default**. Then make a new Game Object, align it to your camera as seen in the pip manager instructions, and then we can take these two items and apply them to the Time Trial Manager's **Gear Part To Reveal** and **Gear Part Camera Position** field respectively.
 
@@ -446,7 +385,7 @@ Let's go over the settings.
 
 - **Is Active** - Whether or not this mover should be trying to move the object it's attached to.
 - **Override Target** - If you want your object to move towards a specific transform, you can place the target transform into this slot and it'll change the settings for the Constant Mover to match.
-- **Direction** - This vector determines what direction the mover is going in, and how fast. 
+- **Direction** - This vector determines what direction the mover is going in, and how fast.
 - **Relative** - Determines if the mover will travel in its defined Direction in world space or local space.
 - **Look At Movement Direction** - Aligns the object's forward vector to the direction the Constant Mover is heading in.
 - (If Look At Movement Direction is True) **Look At Speed** - Determines how quickly the Constant Mover object will interpolate to face its travel direction.
@@ -529,7 +468,7 @@ This component is a system designed to handle texture-based animations for NPCs.
 
 It uses what are known as Moods, which are data files that contain information about what textures to use, and which emotional states they're tied into.
 
-To create a mood for the NPC Mood Controller, Right-Click in your project folder, and navigate to **Create > Create New Mood**. 
+To create a mood for the NPC Mood Controller, Right-Click in your project folder, and navigate to **Create > Create New Mood**.
 
 Here you can define the state this mood is associated with, a texture for the idle expression, a blinking graphic, and then a set of images for a talk cycle.
 
@@ -539,7 +478,7 @@ Now, we'll go through the other properties of the NPC Mood Controller:
 
 - **Target Renderer** - Defines which renderer will have its textures modified with the data in the current mood.
 - **Target Material Index** - Defines which material on the renderer we're going to target. You can leave this at 0 if you only have a single material on your target, but if you add additional materials this value must match the index of your desired material on the renderer.
-- **Target Properties** - Defines which properties in the material are being modified. You can assign multiple properties here, but by default you will typically assign a single property labelled *\_BaseMap*, which is the default main texture property on URP Lit shaders. 
+- **Target Properties** - Defines which properties in the material are being modified. You can assign multiple properties here, but by default you will typically assign a single property labelled _\_BaseMap_, which is the default main texture property on URP Lit shaders.
 - **Blink Delay** - How long, in seconds, this character will take to start a blink (essentially how long their eyes are open).
 - **Blink Time** - How long, in seconds, a blink takes for this character.
 
@@ -649,7 +588,7 @@ We now have a generic trigger instance. We're going to go through all of the opt
 
 - **On Start**: When the level is first loaded, this JTrigger will activate. This can be useful for quite a few reasons, like pre-setting trigger values or changing parts of the level to reflect trigger changes in another (in Orbo this is used to display Bunston's Scone's dead body if he's been fed the radioactive cake).
 - **On Trigger**: If the associated JTrigger object has a collider on it configured as a trigger and detects an object with a matching tag entering its volume, it will run its events. By default it will seek out the player. This makes up the bulk of player interactions with the JTrigger system, but you can also have other physics objects trigger this behavior as well.
-- **On Timer**: Once the timer runs out, JTrigger will run its events. If this context is selected, JTrigger will expose a *Trigger Timer Range* field that you can modify. JTrigger will pick a random value in the range between X and Y and assign it to its internal clock before counting down. To have the timer run consistently, just set both X and Y to the same value. Timers only run while the object is active, so if you want to control when the countdown occurs, simply deactivate the JTrigger object, and activate it via another JTrigger to start counting. Timers will reset themselves once they run out, so if you'd like to have it only run once, either set *One Shot* to true, or have the timer deactivate its own game object at the end of its Events().
+- **On Timer**: Once the timer runs out, JTrigger will run its events. If this context is selected, JTrigger will expose a _Trigger Timer Range_ field that you can modify. JTrigger will pick a random value in the range between X and Y and assign it to its internal clock before counting down. To have the timer run consistently, just set both X and Y to the same value. Timers only run while the object is active, so if you want to control when the countdown occurs, simply deactivate the JTrigger object, and activate it via another JTrigger to start counting. Timers will reset themselves once they run out, so if you'd like to have it only run once, either set _One Shot_ to true, or have the timer deactivate its own game object at the end of its Events().
 - **On Trigger Exit**: It's the same as the On Trigger context, but events are run whenever the object with the associated tag leaves its trigger collider.
 - **On Demand**: The default JTrigger value. This will cause JTriggers to only run if another JTrigger or logic object invokes OnDemand() on it. This is helpful as a code storage block you can call from other objects.
 
@@ -697,7 +636,7 @@ To learn about the available API functions across all of the modkit's object typ
 
 Let's get accustomed to one of the most important API functions: TriggerSet().
 
-- Make a new JTrigger object. 
+- Make a new JTrigger object.
 - Change its context to On Start.
 - Leave the conditionals empty so this trigger is guaranteed to run when the level begins.
 - In the Events, make a new event.
@@ -767,7 +706,7 @@ Create a JComposer, and let's begin by making a new sequence part. This part wil
 
 We're going to first set the delay time to be **1.5 seconds**. This is because this first sequence part will just modify the camera, and the next sequence part is where we'll shake it.
 
-Now, in the sequence event section we're going to add a few events. Click the "+" button, and link the JComposer into the object slot. 
+Now, in the sequence event section we're going to add a few events. Click the "+" button, and link the JComposer into the object slot.
 
 Our first event will be under **JComposer > SetPlayerLockState()**. We're going to set this to true, which will completely lock the player's position down during the cutscene so they cannot move.
 
@@ -842,11 +781,11 @@ You'll notice some new settings pop up once we do this:
 - **Speaker Name** - Determines what name will come up on the name plate when a character speaks. If you leave this empty, the game will hide the name-plate (which is good for narration). This field fully supports both Text Mesh Pro and Text Animator markup tags, which can be found in the [text markup reference]().
 - **Speaker Dialog** - The actual dialog characters have. This field fully supports both Text Mesh Pro and Text Animator markup tags, which can be found in the [text markup reference]().
 - **Speaker Talk Sounds** - This is a list of sounds to randomly choose between when a character speaks.
-- **Speaker Target** - This is the actual character instance that's speaking. **Narration** is used when no character should speak (this will also hide the nameplate by default), **Player** is for Orbo, and the **NPCs 0 - 9** can be customized by adding new targets to the JComposer's **Speaker Targets** array. 
+- **Speaker Target** - This is the actual character instance that's speaking. **Narration** is used when no character should speak (this will also hide the nameplate by default), **Player** is for Orbo, and the **NPCs 0 - 9** can be customized by adding new targets to the JComposer's **Speaker Targets** array.
 
 Since we want our NPC to be the first to speak, we need to set the **Speaker Target** for this sequence part to **NPC0**.
 
-Now, in the sequence event section we're going to add a few events. Click the "+" button, and link the JComposer into the object slot. 
+Now, in the sequence event section we're going to add a few events. Click the "+" button, and link the JComposer into the object slot.
 
 Our first event will be under **JComposer > SetPlayerControlState()**. We're going to set this to false, which will completely disable the player's controls during the dialog so they cannot move.
 
@@ -869,8 +808,6 @@ The **Speaker Target** setting has a pre-made option for the player, so just swi
 And finally, we need to actually establish a view target for the player! To do that, we can create a new empty object and use **Add Component** to add a **Track To Player Head** component. This will allow us to use this new empty object as a proxy for the player's head.
 
 Let's return to our JComposer, and for this sequence event we'll use **JComposer > SetPlayerViewTarget()** and feed in our new track to player head proxy as the input. And there we go! Now the camera will look at Orbo when we get to this part.
-
-
 
 To add more dialog to this exchange, just repeat adding new sequence parts and use **JComposer > SetPlayerViewTarget()** to change who we're looking at! You can also change the camera angle or anything else you'd like as you go. Just treat the NPC conversation like it's a cutscene.
 
@@ -902,7 +839,7 @@ The main difference is that JSwitches have a priority system, because unlike a s
 
 Anyhow, we'll briefly discuss the settings for a JSwitch and then we can talk about actually using one.
 
-The **Branches** setting is the actual array of conditionals you'll define. A branch element has three settings: 
+The **Branches** setting is the actual array of conditionals you'll define. A branch element has three settings:
 
 - **Conditions** - These are the same as JTrigger conditions, and when they're all met this branch is considered valid for operation.
 - **Priority** - This is important: Since multiple branches can be true at once, the priority defines which one is more important, and therefor, the one that should be ran once we're done analyzing the branches.
@@ -932,11 +869,11 @@ However, **you must use Non-Directional lightmaps**. Directional lightmaps do no
 
 I tried to integrate a decent chunk of universalized systems so you could try and add fun set pieces that didn't show up in the original game, but I want to acknowledge now that this toolset isn't going to give you everything you could ask for. I made it as a way of saying thanks for the people who bought the game and were kind to me while I was in a very bad place.
 
-Think of this modding toolkit like Nintendo's *Super Mario Maker*. You can get creative with the tools to create levels that feature really intriguing mechanics not present in the base game, but at the end of the day the toolset is just there for you to make fun levels.
+Think of this modding toolkit like Nintendo's _Super Mario Maker_. You can get creative with the tools to create levels that feature really intriguing mechanics not present in the base game, but at the end of the day the toolset is just there for you to make fun levels.
 
 The game wasn't built around the idea that it would receive mods, so keep in mind that this modding toolkit is scaffolded around the base game in a way that might make some things feel clunky or strange. I tried to simplify the process where I could, but that's about all I could do. I still have to get to work on my main game lol.
 
-----
+---
 
 ### On Trigger Passthrough and Duplicate Events
 
@@ -952,6 +889,7 @@ You cannot define new tags and layers for your modded levels due to a technical 
 I have tried to supply some options to make things easier, and I will list and explain all of the tags and layers here:
 
 **Tags**
+
 - **KeyOrb_Blue** - Used on blue key orbs to transmit data to slab doors. Strongly recommend you avoid using this for your own objects as it might confuse the doors and cause errors.
 - **KeyOrb_Pink** - Used on pink key orbs to transmit data to slab doors. Strongly recommend you avoid using this for your own objects as it might confuse the doors and cause errors.
 - **KeyOrb_Green** - Used on green key orbs to transmit data to slab doors. Strongly recommend you avoid using this for your own objects as it might confuse the doors and cause errors.
@@ -971,12 +909,13 @@ I have tried to supply some options to make things easier, and I will list and e
 - **Tag_I** - A pre-reserved tag you can use for your modded objects!
 
 **Layers**
+
 - **Player** - This is the contact layer for the player. I recommend not using this one or else you might encounter some technical issues.
 - **UIPrerender** - This was used back when the game had 3D UI elements, but has since become deprecated. This can be ignored.
 - **PlayerNoCollide** - Useful! This tells an object to avoid collding with the player. You can use this to create objects that can interact with triggers without interfering with the player.
 - **Gib** - Used internally for breakable sand walls and other destructive remnants. Won't collide with the player.
 - **Damageable** - Marks an object for use in the aim-assist feature (causes Orbo to curve towards the object while drilling). Players will slide off of these objects if they land on them.
-- **Damageable_WalkOn** -  Same as Damageable, but the player won't slide while walking on them. Typically used for gust plates and the like.
+- **Damageable_WalkOn** - Same as Damageable, but the player won't slide while walking on them. Typically used for gust plates and the like.
 - **PlayerBlocker** - This makes it so an object will collide with the player, but the camera won't. Quite useful for decorative elements in a scene.
 - **BlockerPassthrough** - This object won't colide with player blockers, but will collide with everything else. Used on Peeb during the hallway cutscene so he can head into the light while Orbo can't.
 - **NoWallslide** - The player and the camera will collide with this object, but the player cannot wallslide on it. Used in a few places in-game, like the hall leading out of the boss's office that Orbo cannot access without fighting the HR Rep first.

@@ -6,7 +6,7 @@ Another special thanks to Facepunch for the [Facepunch Steamworks API](https://g
 
 To install the **Orbo's Odyssey modkit**, you can clone a copy of the modding project files from [the github page](https://github.com/FeverDevJohnny/orbomodkit).
 
-You will need to have [**Unity 2022.3.4f1**](https://unity.com/releases/editor/whats-new/2022.3.4) installed to open the modkit project. After that, you are ready to start working on your mod! No need for visual studio or any other installations, mod scripting is done entirely in-engine using JTrigger.
+You will need to have [**Unity 2022.3.4f1**](https://unity.com/releases/editor/whats-new/2022.3.4) and [**Git**](https://git-scm.com/downloads) installed to open the modkit project. After that, you are ready to start working on your mod! No need for visual studio or any other installations, mod scripting is done entirely in-engine using JTrigger.
 
 **NOTICE**: I **STRONGLY** recommend [learning unity's interface](https://learn.unity.com/project/start-creating-1?pathwayId=5f7bcab4edbc2a0023e9c38f&missionId=5f77cc6bedbc2a4a1dbddc46) before trying to use the modding toolset. This documentation is explicitly here to tutorialize the mod tools themselves, not the engine.
 

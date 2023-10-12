@@ -5,4 +5,5 @@ using UnityEngine;
 public class TrackToPlayerHead : MonoBehaviour
 {
     public bool useFacecamInstead;
+    public bool alignToTransform;
 }

@@ -18,7 +18,7 @@ MonoBehaviour:
     bit about the process as a whole.
   modAuthor: Peeb
   modIcon: {fileID: 2800000, guid: 7b47b94df734adc49bfd7531fc74137b, type: 3}
-  version: 1.0.0
+  version: 1.1.0
   initialSceneToLoad: Scn_ExampleMod
   spawnPosition: {x: 0, y: 44.27, z: -11.65}
   spawnYaw: 0

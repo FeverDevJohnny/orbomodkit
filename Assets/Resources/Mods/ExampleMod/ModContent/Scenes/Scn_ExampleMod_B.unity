@@ -1894,10 +1894,8 @@ MonoBehaviour:
   - progressType: 2
     delayTime: 0
     speakerName: Peeb
-    speakerDialog: I'm so tired, Orbo. I'm tired of having to play this stupid character,
-      and every day I'm coming closer to just throwing my hat down and leaving. But
-      by the most bare of threads I hang on. Until you say things like "this truly
-      was an orbo's odyssey!"
+    speakerDialog: Every time you make a joke like that I'm inching closer to committing
+      atrocities so horrifying they'll make the dark strangler look like a joke.
     speakerTalkSound:
       Value:
       - {fileID: 8300000, guid: 18a3764b597f772468d3f6fb63e878d9, type: 3}
@@ -1909,37 +1907,8 @@ MonoBehaviour:
   - progressType: 2
     delayTime: 0
     speakerName: Peeb
-    speakerDialog: It's in these tender moments the most foul darkness imaginable
-      floods my mind. I've had thoughts so dark even a mother couldn't forgive them.
-      I'm talking "torching down the workplace with all of my coworkers trapped inside"
-      kind of dark.
-    speakerTalkSound:
-      Value:
-      - {fileID: 8300000, guid: 18a3764b597f772468d3f6fb63e878d9, type: 3}
-    speakerTarget: 2
-    cameraChangesAreSnap: 1
-    sequenceEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - progressType: 2
-    delayTime: 0
-    speakerName: Peeb
-    speakerDialog: So remember that. Every time you say something so insufferably
-      stupid I'm inching closer to committing atrocities so horrifying they'll make
-      the dark strangler look like a joke.
-    speakerTalkSound:
-      Value:
-      - {fileID: 8300000, guid: 18a3764b597f772468d3f6fb63e878d9, type: 3}
-    speakerTarget: 2
-    cameraChangesAreSnap: 1
-    sequenceEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - progressType: 2
-    delayTime: 0
-    speakerName: Peeb
-    speakerDialog: Go. Read the little explanations. Try out the mod mechanics. And
-      don't talk to me for a while. I'm at my limit and I need to cool off.
+    speakerDialog: Don't talk to me for a while. I'm at my limit and I need to cool
+      off.
     speakerTalkSound:
       Value:
       - {fileID: 8300000, guid: 18a3764b597f772468d3f6fb63e878d9, type: 3}
@@ -3180,7 +3149,7 @@ GameObject:
   - component: {fileID: 545551299}
   - component: {fileID: 545551298}
   - component: {fileID: 545551297}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5192,6 +5161,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overrideStartingRotation: 0
+--- !u!1 &894465614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 894465616}
+  - component: {fileID: 894465615}
+  m_Layer: 0
+  m_Name: BGM Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &894465615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894465614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81ff60e43065dc4daecdd24827025d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 10
+  targetTrack: {fileID: 8300000, guid: e2c87c1fb6ba87341bb555aca506a523, type: 3}
+--- !u!4 &894465616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894465614}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 43.772125, y: 40.81185, z: 17.934296}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &900073622
 GameObject:
   m_ObjectHideFlags: 0
@@ -5873,6 +5889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useFacecamInstead: 0
+  alignToTransform: 0
 --- !u!4 &1004864378
 Transform:
   m_ObjectHideFlags: 0
@@ -6775,7 +6792,7 @@ MonoBehaviour:
   ringClearSoundOverride: {fileID: 0}
   cheerSoundOverride: {fileID: 0}
   booSoundOverride: {fileID: 0}
-  timeTrialTheme: {fileID: 49874886}
+  timeTrialThemeOverride: {fileID: 894465615}
 --- !u!4 &1232823277
 Transform:
   m_ObjectHideFlags: 0
@@ -7276,6 +7293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useFacecamInstead: 1
+  alignToTransform: 0
 --- !u!4 &1454727998
 Transform:
   m_ObjectHideFlags: 0

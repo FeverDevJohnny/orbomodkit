@@ -1,12 +1,12 @@
 Special thanks to Deadcows for having developed [MyBox](https://github.com/Deadcows/MyBox), which is imported via package-manager in the Orbo's Odyssey Modkit to make interfacing with the modkit objects a lot cleaner.
 
-Another special thanks to Facepunch for the [Facepunch Steamworks API](https://github.com/Facepunch/Facepunch.Steamworks), which is what I'm using to send data to the steam workshop.
+Another special thanks to Facepunch for the [Facepunch Steamworks API](https://github.com/Facepunch/Facepunch.Steamworks), which is what the modkit uses to send data to the steam workshop.
 
 ## Installation
 
 To install the **Orbo's Odyssey modkit**, you can clone a copy of the modding project files from [the github page](https://github.com/FeverDevJohnny/orbomodkit).
 
-You will need to have **Unity 2022.3.4f1** installed to open the modkit project. After that, you are ready to start working on your mod! No need for visual studio or any other installations, mod scripting is done entirely in-engine using JTrigger.
+You will need to have [**Unity 2022.3.4f1**](https://unity.com/releases/editor/whats-new/2022.3.4) and [**Git**](https://git-scm.com/downloads) installed to open the modkit project. After that, you are ready to start working on your mod! No need for visual studio or any other installations, mod scripting is done entirely in-engine using JTrigger.
 
 **NOTICE**: I **STRONGLY** recommend [learning unity's interface](https://learn.unity.com/project/start-creating-1?pathwayId=5f7bcab4edbc2a0023e9c38f&missionId=5f77cc6bedbc2a4a1dbddc46) before trying to use the modding toolset. This documentation is explicitly here to tutorialize the mod tools themselves, not the engine.
 
@@ -58,7 +58,7 @@ To add a custom icon for your mod, create a **16:9 image** and export it as a .j
 
 You will need to be logged into your steam account on this computer for uploading to work.
 
-It's pretty simply to upload to the workshop: Just make sure **you've filled out your mod info** and **create a build**.
+It's pretty simple to upload to the workshop: Just make sure **you've filled out your mod info** and **create a build**.
 Then you can configure the privacy of your workshop mod, and hit **Upload to Workshop** to begin the process.
 Once you've made an upload, you can press the **Update on Steam Workshop** button to rebuild to the workshop as you please.
 
@@ -97,7 +97,7 @@ Right-click in the hierarchy, go down to **Modkit > Visual > Post Processing** a
 
 [(API Reference for Cannons)](#cannon-api-reference)
 
-Mobility is definitely the main focus of Orbo's Odyssey, so naturally you can use cannons and gust plates in your modded levels as well!
+Mobility is the main focus of Orbo's Odyssey, so naturally you can use cannons and gust plates in your modded levels as well!
 
 Let's go over how to create these objects.
 
@@ -121,7 +121,7 @@ And here are the settings for a **Gust Plate**:
 
 ### Working With Level Binders
 
-A level binder can be thought of as a configuration tool for your level.
+A level binder allows you to customize a couple settings for the scene it's in.
 
 To create one, Right-Click in the hierarchy and navigate to **Modkit > Management > Level Binder**.
 
@@ -171,9 +171,9 @@ Here are the parameters:
 
 ### Working With A Size Reference
 
-You can Right-Click in the hierarchy and navigate to **Modkit > Misc > Size Reference** to make a size reference. This shows you how utterly microscopic Orbo is in the world. Please cherish this size reference and treat it gently, okay?
+You can Right-Click in the hierarchy and navigate to **Modkit > Misc > Size Reference** to make a size reference. This shows you how tiny Orbo is in the grand scheme of things.
 
-Also it has a readonly Size Reference value that tells you the exact size, in units, Orbo is.
+Also it has a readonly Size Reference value that oughta help you if you're trying to create models that need to match Orbo's scale.
 
 ---
 
@@ -213,7 +213,7 @@ Global volumes will affect the current track no matter what. These are typically
 
 Local volumes affect the current track if the player occupies their space. You can use any of unity's built-in physics colliders (except for mesh colliders) configured as a trigger to work with the local volume system.
 
-The priority value of a volume determines how important it is compared to other volumes. If you activate a gloval volume with a higher priority than one that already exists, it'll crossfade the current song into the new volume's track.
+The priority value of a volume determines how important it is compared to other volumes. If you activate a global volume with a higher priority than one that already exists, it'll crossfade the current song into the new volume's track.
 
 Higher priority can be helpful with local volumes, as you can create zones in your level where the BGM changes, and once you exit them it'll default back to the standard track (or whichever track is next in line).
 
@@ -233,11 +233,11 @@ These are very self-explanatory systems, so I'm mostly just going to explain the
 
 Slab Doors should have their front facing the direction the player will approach them from, since they do not have any details on the other side. The front side is designated by a white arrow.
 
-**Displacement Goal** determines how far the slab door must move from its current position to be considered "open". This is determined in world-space, so if you shrink or expand your slab door you will have to readjust the displacement distance to match.
+**Displacement Goal** determines how far the slab door must move from its current position to be considered "open". This is determined in world-space, so if you shrink or expand your slab door you will have to readjust the displacement goal to match.
 
 **Displacement Speed** determines how fast, in seconds, the door will reach its goal.
 
-**Dust Offset** determines where the dust effect for the door opening will be positioned when it's unlocked. Typically you should adjust the offset so that the dust appears on the floor.
+**Dust Offset** determines where the dust effect for the door opening will be positioned when it's unlocked. Typically you should adjust the offset so that the white boundary gizmo is aligned to the floor.
 
 **On Unlock Door Slab** is a JTrigger hook that will run events once a door receives its key orb. 
 
@@ -914,7 +914,7 @@ To actually run a JSwitch, a JTrigger or JComposer must call **JSwitch > Operate
 
 ---
 
-## Caveats and Known Issues
+## Caveats, Miscellaneous Info and Known Issues
 
 Believe it or not: Unity doesn't do a great job supporting most of their features, and I'm also prone to mistakes! So there are some technical issues with mods that I would like to address here.
 
@@ -930,19 +930,56 @@ However, **you must use Non-Directional lightmaps**. Directional lightmaps do no
 
 ### Complexity
 
-The modding toolkit is, frankly, not a brilliantly engineered system that'll let you create any game you want in Orbo's Odyssey. I tried to add a decent chunk of universalized systems so you could try and add fun set pieces that didn't show up in the original game, but I want to acknowledge now that this toolset isn't going to give you everything you could ask for. I made it as a way of saying thanks for the people who bought the game and were kind to me while I was in a very bad place.
+I tried to integrate a decent chunk of universalized systems so you could try and add fun set pieces that didn't show up in the original game, but I want to acknowledge now that this toolset isn't going to give you everything you could ask for. I made it as a way of saying thanks for the people who bought the game and were kind to me while I was in a very bad place.
 
 Think of this modding toolkit like Nintendo's *Super Mario Maker*. You can get creative with the tools to create levels that feature really intriguing mechanics not present in the base game, but at the end of the day the toolset is just there for you to make fun levels.
 
-The game wasn't built around the idea that it would receive mods, this was added post-release, so some things are going to feel clunky or strange. I tried to simplify the process where I could, but that's about all I could do. I still have to get to work on my main game lol.
+The game wasn't built around the idea that it would receive mods, so keep in mind that this modding toolkit is scaffolded around the base game in a way that might make some things feel clunky or strange. I tried to simplify the process where I could, but that's about all I could do. I still have to get to work on my main game lol.
 
 ----
 
 ### On Trigger Passthrough and Duplicate Events
 
-This is a really helpful system, but keep in mind that if your passthrough's trigger volume overlaps with its source object's, it can generate duplicate OnTriggerEnter and OnTriggerExit events on your target object. This might be fine if you're dealing with modkit objects that have one-shot behavior (key orbs, for example, only get collected on the first trigger event and will ignore duplicates), but with JTriggers and Interactables this could cause some unexpected behavior. In these two explicit cases, **try to make sure you're only using passthroughs when there is absolutely no way to have the player make contact with your target object**.
+This is a really helpful system, but keep in mind that if your passthrough's trigger volume overlaps with its source object's trigger volume, it can generate duplicate OnTriggerEnter and OnTriggerExit events on your target object. This might be fine if you're dealing with modkit objects that have one-shot behavior (key orbs, for example, only get collected on the first trigger event and will ignore duplicates), but with JTriggers and Interactables this could cause some unexpected behavior. In these two explicit cases, **try to make sure you're only using passthroughs when there is absolutely no way to have the player make contact with your target object's trigger collider**.
 
 I haven't devised a way to deal with this yet that I feel satisfied with, so maybe at somepoint down the road I'll rework how passthroughs behave with triggerable objects to make it a bit more friendly. For now, just accept that this is a known issue and try to be careful not to walk into a trap.
+
+---
+
+### Tags and Layers
+
+You cannot define new tags and layers for your modded levels due to a technical constraint with how Unity handles asset bundles and these types of data.
+I have tried to supply some options to make things easier, and I will list and explain all of the tags and layers here:
+
+**Tags**
+- **KeyOrb_Blue** - Used on blue key orbs to transmit data to slab doors. Strongly recommend you avoid using this for your own objects as it might confuse the doors and cause errors.
+- **KeyOrb_Pink** - Used on pink key orbs to transmit data to slab doors. Strongly recommend you avoid using this for your own objects as it might confuse the doors and cause errors.
+- **KeyOrb_Green** - Used on green key orbs to transmit data to slab doors. Strongly recommend you avoid using this for your own objects as it might confuse the doors and cause errors.
+- **KeyOrb_Red** - Used on red key orbs to transmit data to slab doors. Strongly recommend you avoid using this for your own objects as it might confuse the doors and cause errors.
+- **IgnoreTracking** - Tells the composer system that Orbo's body shouldn't try to look at this associated object if it's marked as the camera's current view target.
+- **GnomeHead** - Internal ID used in the main game for the gnome quest. You can use this if you want, there's no scripts in the modding system to conflict with this.
+- **NukeBall** - Internal ID for the boss's aerial mine attack. Also used in the gnome quest.
+- **CrazyShapeGate** - Internal ID for the crazy shape gate in the monolith station puzzle.
+- **Tag_A** - A pre-reserved tag you can use for your modded objects!
+- **Tag_B** - A pre-reserved tag you can use for your modded objects!
+- **Tag_C** - A pre-reserved tag you can use for your modded objects!
+- **Tag_D** - A pre-reserved tag you can use for your modded objects!
+- **Tag_E** - A pre-reserved tag you can use for your modded objects!
+- **Tag_F** - A pre-reserved tag you can use for your modded objects!
+- **Tag_G** - A pre-reserved tag you can use for your modded objects!
+- **Tag_H** - A pre-reserved tag you can use for your modded objects!
+- **Tag_I** - A pre-reserved tag you can use for your modded objects!
+
+**Layers**
+- **Player** - This is the contact layer for the player. I recommend not using this one or else you might encounter some technical issues.
+- **UIPrerender** - This was used back when the game had 3D UI elements, but has since become deprecated. This can be ignored.
+- **PlayerNoCollide** - Useful! This tells an object to avoid collding with the player. You can use this to create objects that can interact with triggers without interfering with the player.
+- **Gib** - Used internally for breakable sand walls and other destructive remnants. Won't collide with the player.
+- **Damageable** - Marks an object for use in the aim-assist feature (causes Orbo to curve towards the object while drilling). Players will slide off of these objects if they land on them.
+- **Damageable_WalkOn** -  Same as Damageable, but the player won't slide while walking on them. Typically used for gust plates and the like.
+- **PlayerBlocker** - This makes it so an object will collide with the player, but the camera won't. Quite useful for decorative elements in a scene.
+- **BlockerPassthrough** - This object won't colide with player blockers, but will collide with everything else. Used on Peeb during the hallway cutscene so he can head into the light while Orbo can't.
+- **NoWallslide** - The player and the camera will collide with this object, but the player cannot wallslide on it. Used in a few places in-game, like the hall leading out of the boss's office that Orbo cannot access without fighting the HR Rep first.
 
 ---
 

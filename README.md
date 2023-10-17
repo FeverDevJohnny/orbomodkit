@@ -595,6 +595,17 @@ This is strongly recommended for working with cutscenes where you need the camer
 
 You can either have this track to the player's head, or to the facecam object attached to it, which can be used to create dramatic shots by setting the camera's position to match this tracking object (look at the documentation for [JComposer](#Working With JComposer) to learn more about camera handling).
 
+You can also toggle on whether or not the tracking object will rotate itself to align with the player's head, which can be useful for making objects stick to Orbo's noggin.
+
+---
+
+### Track To Player Camera
+
+This is a lot like track to player head, but as you'd expect it goes to the player's camera instead.
+You can use this to create billboards!
+
+You can also toggle on whether or not the tracking object will rotate itself to align with the player's camera.
+
 ---
 
 ### Transform Mover

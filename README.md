@@ -1066,12 +1066,12 @@ SetCheckpointAsCurrentQuietly() : Marks this checkpoint as the current one for t
 
 ### AI Walker API Reference
 
----
+```
 SetNavigationState(bool state) : Determines whether or not the AI navigator is walking towards its goal or not. This is active by default, so to stop the AI just set this to false.
 
 SetNavigationTarget(Transform target) : Allows you to define new targets at runtime. You can also just assign a target in the editor if you need your AI Walker to start moving immediately.
 
----
+```
 
 ### Interactable_Events API Reference
 

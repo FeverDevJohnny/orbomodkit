@@ -470,6 +470,18 @@ They only have a single parameter: A target [NPC Mood Controller](#NPC Mood Cont
 
 ---
 
+### AI Walker
+
+[(API Reference for AI Walker)](#ai-walker-api-reference)
+
+This is a simple component that allows you to create an object that can walk along navmeshes.
+
+This is very primitive and does not support offmesh links at present.
+
+Visit the API Reference to learn how this works.
+
+---
+
 ### Speaker Target Animator
 
 [(API Reference for Speaker Target Animators)](#speaker-target-animator-api-reference)
@@ -1051,6 +1063,13 @@ SetCheckpointAsCurrent() : Marks this checkpoint as the current one for the play
 
 SetCheckpointAsCurrentQuietly() : Marks this checkpoint as the current one for the player to spawn at, but doesn't play any sounds or effects. This can be useful if you need to subtley teleport the player somewhere else in the level when they die...
 ```
+
+### AI Walker API Reference
+
+---
+SetNavigationState(bool state) : Determines whether or not the AI navigator is walking towards its goal or not. This is active by default, so to stop the AI just set this to false.
+
+SetNavigationTarget(Transform target) : Allows you to define new targets at runtime. You can also just assign a target in the editor if you need your AI Walker to start moving immediately.
 
 ---
 

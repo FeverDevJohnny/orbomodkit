@@ -1,0 +1,14 @@
+ManifestFileVersion: 1
+CompatibilityAssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: Mod_ExampleMod
+      Hash: 3a6fa64465b5376051bba9861736b3d4
+      CRC: 2595081993
+      Dependencies: {}
+    Info_1:
+      Name: Mod_ExampleMod_scenes
+      Hash: b7faa09d4216a2ec8c5a666cfd99b551
+      CRC: 3305773369
+      Dependencies: {}
+        Dependency_0: Mod_ExampleMod

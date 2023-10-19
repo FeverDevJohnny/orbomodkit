@@ -714,6 +714,8 @@ To learn about the available API functions across all of the modkit's object typ
 
 **Events On Fail** is the same as the Events field, but these will be run if the context is met and the conditionals return back as false. If you don't provide any conditionals, Events On Fail will never run, since the JTrigger will always evaluate empty conditionals as true.
 
+(There are also two special commands you can enter into trigger ID fields, both starting with >>: >>random_x_y, and >>gearparts. For the first command, replace x and y with integer values you'd like to generate a random number with, and it'll do that. For the second, no arguments are needed and it'll return the amount of gear parts the player currently has.)
+
 ---
 
 ### Setting JTrigger Values
